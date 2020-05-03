@@ -8,8 +8,10 @@ var app = {
         app.getProductList();
     },
     getProductList: function() {
+        let query_string = window.location.search;
+        console.log(query_string);
         // make a HTTP GET request
-        $.getJSON(`${app.baseURL}`)
+        $.getJSON(`${app.baseURL}${query_string}`)
         .done(app.onSuccess)
         .fail(app.onError);
     },
@@ -24,8 +26,9 @@ var app = {
         // create a different data-id attribute for each plus button
         app.productList.forEach((element, idx) => {
             let productRow = `<div class="table-row">
-            <div class="table-cell">${element.product}</div>
-            <div class="table-cell">${element.price} euro</div>
+            <div class="table-cell">${element.nome}</div>
+            <div class="table-cell">${element.barcode}</div>
+            <div class="table-cell"><img src=" ${element.barcode}" alt="product image"</div>
             </div>`;
             $("#table-body").append(productRow);
             console.log(productRow);

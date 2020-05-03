@@ -10,5 +10,8 @@
 
 .table-cell,.table-header-cell {
   float: left;
-  width: 50%;
+  width: 33%;
 }
+body {
+  background-image: url("dankint.jpg");
+ }

@@ -21,7 +21,7 @@ $db_connection=new mysqli("pandolfi_db_1", "user","password","db");
           $item= new stdClass();
           $item->nome= $row["nome"];
           $item->barcode= $row["barcode"];
-          $item->img.url = $row["img.url"];
+          $item->img_url = $row["img.url"];
           $productObj->productList[]= $item;
       }
   }
